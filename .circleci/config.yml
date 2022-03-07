@@ -1,16 +1,18 @@
-version: 2
+version: 2.1
 jobs:
-  Tests:
+  build:
     docker:
       - image: raphaelcastro35/dojo_pipe_bitbucket:v.0.1
+    parallelism: 3
     steps:
+      - checkout
       - run: 
           name: Bundle install
           command: bundle install --path vendor/bundle
       - run: 
           name: Execute all features scenarios
-          command: bundle exec cucumber -p ci --retry 2
+          command: bundle exec cucumber 
       - store_test_results:
-          path: ~/report/report.html
+          path: report/report.html
       - store_artifacts:
-          path: ~/report/report.html
+          path: report/report.html
