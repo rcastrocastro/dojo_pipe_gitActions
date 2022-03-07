@@ -11,7 +11,7 @@ jobs:
           command: bundle install --path vendor/bundle
       - run: 
           name: Execute all features scenarios
-          command: bundle exec cucumber 
+          command: bundle exec cucumber -p ci
       - store_test_results:
           path: report/report.html
       - store_artifacts:
