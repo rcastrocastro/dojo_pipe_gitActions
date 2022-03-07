@@ -11,6 +11,10 @@ on:
       - master
       - develop
       - feature/**
+      
+env:
+  USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
+  PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
 
 jobs:
   test:
@@ -28,9 +32,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: report
-          path: report/report.html
-      env:
-          USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
-          PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          path: report/report.html      
