@@ -24,11 +24,11 @@ jobs:
       run: bundle install --retry=3 --jobs=4 && env
     - name: Run tests
       run: bundle exec cucumber -p ci --retry 2
+      env:
+        USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
+        PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
     - name: Report
       uses: actions/upload-artifact@v2
       with:
           name: report
           path: report/report.html
-      env:
-          USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
-          PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
