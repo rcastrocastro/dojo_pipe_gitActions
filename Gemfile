@@ -1,0 +1,13 @@
+source 'https://rubygems.org'
+
+gem 'cucumber', '3.1.2'
+gem 'dotenv', '2.7'
+gem 'factory_bot'
+gem 'faker'
+gem 'httparty'
+gem 'json_matchers'
+gem 'pry', '0.12.2'
+gem 'pry-nav'
+gem 'pry-remote'
+gem 'report_builder', '1.8'
+gem 'rspec'

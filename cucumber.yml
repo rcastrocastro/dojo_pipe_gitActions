@@ -1,0 +1,18 @@
+---
+  default: -p json -p html -p dev -p env_dev -p bdd -p not_cucumber
+  ci: -p json -p html -p dev -p env_dev -p bdd
+
+  # configuração report
+  json: -f json --out=report/report.json
+  html: -f html --out=report/report.html
+  not_cucumber: --publish-quiet 
+
+  # configuração ambientes
+  dev: ENV_TYPE=dev
+  env_dev: ENV_PREFIX=dev
+  qa: ENV_TYPE=qa
+  env_qa: ENV_PREFIX=qa
+
+  # configuração impressão cucumber
+  bdd: --format pretty
+  dot: --format progress
