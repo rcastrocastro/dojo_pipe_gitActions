@@ -12,10 +12,6 @@ on:
       - develop
       - feature/**
       
-env:
-  USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
-  PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -32,4 +28,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: report
-          path: report/report.html      
+          path: report/report.html
+      env:
+          USERNAME_TOKEN: ${{ secrets.USERNAME_TOKEN }}
+          PASSWORD_TOKEN: ${{ secrets.PASSWORD_TOKEN }}
