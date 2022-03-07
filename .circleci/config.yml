@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  Tests:
+    docker:
+      - image: raphaelcastro35/dojo_pipe_bitbucket:v.0.1
+    steps:
+      - run: 
+          name: Bundle install
+          command: bundle install --path vendor/bundle
+      - run: 
+          name: Execute all features scenarios
+          command: bundle exec cucumber -p ci --retry 2
+      - store_test_results:
+          path: ~/report/report.html
+      - store_artifacts:
+          path: ~/report/report.html
