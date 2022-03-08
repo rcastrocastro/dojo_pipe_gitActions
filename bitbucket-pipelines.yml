@@ -1,0 +1,14 @@
+image: raphaelcastro35/dojo_pipeline:v.0.1
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: Run Testes
+          script:
+            - echo "Run Tests to environment QA"
+            - bundle install
+            - echo "Executando os Testes"
+            - bundle exec cucumber -p ci --retry 2
+          artifacts:
+            - report/*

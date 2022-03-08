@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: raphaelcastro35/dojo_pipe_bitbucket:v.0.1
+      - image: raphaelcastro35/dojo_pipeline:v.0.1
     parallelism: 3
     steps:
       - checkout
